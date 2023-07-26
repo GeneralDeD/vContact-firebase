@@ -94,7 +94,7 @@ function Home() {
   const handleSubmit = async (event: any) => {
     event.preventDefault();
 
-    const tags = selectedTags?.current?.state.selectedValues;
+    const tags = (selectedTags?.current as any).state.selectedValues;
 
     if (tags?.length) {
       setErrTagsSelect(false);
@@ -252,7 +252,7 @@ function Home() {
               />
               {errTagsSelect && <small className="text-danger">Please choose a tag(s)</small>}
             </Form.Group>
-            <div className="d-flex align-items-center justify-content-end gap-3">
+            <div className="d-flex align-items-center justify-content-end gap-2">
               <Button variant="secondary" onClick={handleCloseModal} disabled={isLoadingModal}>
                 Close
               </Button>

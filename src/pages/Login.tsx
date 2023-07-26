@@ -18,8 +18,8 @@ function Login() {
     event.preventDefault();
     setIsLoading(true);
 
-    const email = event.target[0].value;
-    const password = event.target[1].value;
+    const email = (event.target as any)[0].value;
+    const password = (event.target as any)[1].value;
 
     try {
       const res = await signInWithEmailAndPassword(auth, email, password);
